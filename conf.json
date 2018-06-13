@@ -1,0 +1,25 @@
+{
+    "DeBug": true,
+    "HandlePort":"8080",
+    
+    "RDhost":"127.0.0.1",       
+	"RDport":" 6379",    
+	"RDdb":1,         
+    "RDpassword":"abcd1234",
+    "RDmaxidle":1,
+    "RDmaxactiv":10,
+
+    "SqlType":"mysql", 
+	"SqlHost":"127.0.0.1",  
+    "SqlPort":"3306", 
+	"SqlDB":"test",   
+	"SqlUser":"root",  
+    "SqlPassword":"yyh1230.",
+    
+    "MQueueName": "push.msg.q",
+    "MExchange":  "t.msg.ex",
+    "MExchangeType":"direct",
+	"MMqurl":  "amqp://gree:abcd1234@172.28.162.234:5672/host", 
+	"MKey":  "gree"    
+}
+
