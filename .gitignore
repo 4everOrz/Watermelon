@@ -1,0 +1,13 @@
+bin
+pkg
+.settings
+.project
+.classpath
+*.exe
+*.exe~
+*.tmp
+*.tar.gz
+*.log
+*.yaml
+.vscode
+debug
