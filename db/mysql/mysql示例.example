@@ -1,7 +1,0 @@
-
-CREATE TABLE `userInfo` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(40) NOT NULL DEFAULT '',
-  `age` varchar(40) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
