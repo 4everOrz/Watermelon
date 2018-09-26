@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"Watermelon/common/jwt"
 	_ "Watermelon/common/log"
 	"Watermelon/models"
 	"net/http"
@@ -54,7 +53,7 @@ func (this *UserController) UserLogin(c *gin.Context) {
 		return
 	}
 	if userinfo.Password == security.Md5(user.Password) {
-		userinfo.Token = jwt.GenToken()
+		userinfo.Token = GenToken()
 		userinfo.CreatedAt = time.Now().Format("2006-01-02 15:04:05")
 		usermap["UserID"] = userinfo.UserID
 
@@ -73,4 +72,18 @@ func (this *UserController) UserLogin(c *gin.Context) {
 	} else {
 		c.JSON(http.StatusBadRequest, BasicResponse{http.StatusBadRequest, "login failed", nil})
 	}
+}
+
+//用户token校验
+func AuthToken(UserID int64, token string) bool {
+	var userinfo models.User
+	userinfo.UserID = UserID
+	user, err := userinfo.GetEntityByID()
+	if err != nil {
+
+	}
+	if user.Token == token && CheckToken(token) {
+		return true
+	}
+	return false
 }
